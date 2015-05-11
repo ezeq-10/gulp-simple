@@ -1,11 +1,34 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-// app/src/js/lib/message.js
+// app/src/js/main.js
+'use strict';
 
-module.exports = function message(text) {
-    alert(text);
+var message = require('./lib/message');
+var _ = require('underscore');
+var $ = require('jquery');
+
+window.onload = function() {
+
+  var messages = [
+    "Hola!!..",
+    "esto es..",
+    "una prueba de gulp y browserify."
+  ];
+
+  _.each(messages, function(msg) {
+    $('body').append($('<p>').text(msg));
+  });
 };
 
-},{}],2:[function(require,module,exports){
+
+},{"./lib/message":2,"jquery":3,"underscore":4}],2:[function(require,module,exports){
+// app/src/js/lib/message.js
+'use strict';
+
+module.exports = function message(text) {
+  alert(text);
+};
+
+},{}],3:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -9217,7 +9240,7 @@ return jQuery;
 
 }));
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -10767,25 +10790,4 @@ return jQuery;
   }
 }.call(this));
 
-},{}],4:[function(require,module,exports){
-// app/src/js/main.js
-
-var message = require('./lib/message');
-var _ = require('underscore');
-var $ = require('jquery');
-
-window.onload = function() {
-
-    var messages = [
-        "Hola!!..",
-        "esto es..",
-	"una prueba"
-    ];
-
-    _.each(messages, function(msg) {
-        $('body').append(msg);
-    });
-};
-
-
-},{"./lib/message":1,"jquery":2,"underscore":3}]},{},[4]);
+},{}]},{},[1]);
