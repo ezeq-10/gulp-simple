@@ -1,11 +1,9 @@
-// app/src/js/main.js
-'use strict';
-
 var message = require('./lib/message');
 var _ = require('underscore');
 var $ = require('jquery');
 
 window.onload = function() {
+  'use strict';
 
   var messages = [
     "Hola!!..",

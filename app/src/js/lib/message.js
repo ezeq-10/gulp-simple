@@ -1,6 +1,7 @@
 // app/src/js/lib/message.js
-'use strict';
 
 module.exports = function message(text) {
+  'use strict';
+
   alert(text);
 };
